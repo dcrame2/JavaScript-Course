@@ -68,7 +68,6 @@ const avgAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, avgAge);
 */
 
-
 const markHeight = 1.69;
 const markWeight = 78;
 const johnHeight = 1.95;
