@@ -178,6 +178,7 @@ if (height) {
 */
 
 // Equality Operators
+/*
 const age = 18;
 if (age === 18) console.log("You just became an adult");
 
@@ -194,3 +195,87 @@ if (favorite === 23) {
 }
 
 if (favorite !== 23) console.log('Why not 23?');
+*/
+
+
+// Boolean Logic
+// const hasDrivesLicense = true; //A
+// const hasGoodVision = true; //B
+
+// console.log(hasDrivesLicense && hasGoodVision);
+// console.log(hasDrivesLicense || hasGoodVision);
+// console.log(!hasDrivesLicense);
+
+
+
+
+// if (hasDrivesLicense && hasGoodVision) {
+//     console.log('Sarah is able to drive!');
+// } else {
+//     console.log('Someone else should drive!')
+// }
+
+// const isTired = false; // C
+// console.log(hasDrivesLicense && hasGoodVision && isTired);
+
+
+// if (hasDrivesLicense && hasGoodVision && !isTired) {
+//     console.log('Sarah is able to drive!');
+// } else {
+//     console.log('Someone else should drive!')
+// }
+
+
+
+// coding challenge #3
+
+// const dolphinsFirstScore = 96;
+// const dolphinsSecondScore = 108;
+// const dolphinesThirdScore = 89;
+
+// const koalasFirstScore = 88;
+// const koalasSecondScore = 91;
+// const koalasThirdScore = 110;
+
+// const minScore = 100;
+
+// const dolphinsAvgScore = (dolphinsFirstScore + dolphinsSecondScore + dolphinesThirdScore) / 3;
+// console.log(dolphinsAvgScore);
+
+// const koalasAvgScore = (koalasFirstScore + koalasSecondScore + koalasThirdScore) / 3;
+// console.log(koalasAvgScore);
+
+// if (dolphinsAvgScore > koalasAvgScore) {
+//     console.log("Dolphins win!");
+// } else if (dolphinsAvgScore < koalasAvgScore) {
+//     console.log("Koalas win!");
+// } else {
+//     console.log("Its a draw!");
+//}
+
+// Bonus 1 & 2
+/*const dolphinsFirstScore = 97;
+const dolphinsSecondScore = 112;
+const dolphinesThirdScore = 101;
+
+const koalasFirstScore = 109;
+const koalasSecondScore = 95;
+const koalasThirdScore = 106;
+
+const minScore = 100;
+
+const dolphinsAvgScore = (dolphinsFirstScore + dolphinsSecondScore + dolphinesThirdScore) / 3;
+console.log(dolphinsAvgScore);
+
+const koalasAvgScore = (koalasFirstScore + koalasSecondScore + koalasThirdScore) / 3;
+console.log(koalasAvgScore);
+
+if (dolphinsAvgScore > koalasAvgScore && dolphinsAvgScore >= minScore) {
+    console.log("Dolphins win!");
+} else if (dolphinsAvgScore < koalasAvgScore && koalasAvgScore >= minScore) {
+    console.log("Koalas win!");
+} else if (dolphinsAvgScore === koalasAvgScore && koalasAvgScore >= minScore && dolphinsAvgScore >= minScore) {
+    console.log("Both teams win!");
+} else {
+    console.log("no one wins bitches hahahahahah!");
+} */
