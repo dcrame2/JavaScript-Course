@@ -155,7 +155,7 @@ console.log(n); */
 
 // 5 falsy values: 0, '', undefined, null, NaN
 
-console.log(Boolean(0)); //false
+/*console.log(Boolean(0)); //false
 console.log(Boolean(undefined)); //false
 console.log(Boolean('Jonas')); // true
 console.log(Boolean({})); //true
@@ -175,3 +175,22 @@ if (height) {
 } else {
     console.log('Height is UNDEFINED');
 }
+*/
+
+// Equality Operators
+const age = 18;
+if (age === 18) console.log("You just became an adult");
+
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite === 23) {
+    console.log('Cool! 23 is great!');
+} else if (favorite === 7) {
+    console.log('7 is a cool #');
+} else {
+    console.log("Number is not 23 or 7");
+}
+
+if (favorite !== 23) console.log('Why not 23?');
