@@ -337,9 +337,10 @@ if (dolphinsAvgScore > koalasAvgScore && dolphinsAvgScore >= minScore) {
 
 // console.log(drink2)
 
-const tip = .15;
-const tip1 = .20;
-const bill = 430;
+// const tip = .15;
+// const tip1 = .20;
+// const bill = 430;
 
-const tipAmount = bill > 50 && bill < 300 ? `The bill was ${bill}, the tip was ${bill * tip}, and the total value ${bill + (bill * tip)}` : `The bill was ${bill}, the tip was ${bill * tip1}, and the total value ${bill + (bill * tip1)}`;
-console.log(tipAmount);
+// const tipAmount = bill > 50 && bill < 300 ? `The bill was ${bill}, the tip was ${bill * tip}, and the total value ${bill + (bill * tip)}` : `The bill was ${bill}, the tip was ${bill * tip1}, and the total value ${bill + (bill * tip1)}`;
+// console.log(tipAmount);
+
