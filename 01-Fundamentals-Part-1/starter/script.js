@@ -279,3 +279,67 @@ if (dolphinsAvgScore > koalasAvgScore && dolphinsAvgScore >= minScore) {
 } else {
     console.log("no one wins bitches hahahahahah!");
 } */
+
+// switch statements
+
+// const day = 'tuesday';
+
+// switch (day) {
+//     case 'monday': //day === monday
+//         console.log('Plan course structure');
+//         console.log('Go to coding meeting');
+//         break;
+//     case 'tuesday':
+//         console.log("prepare theory videos");
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples');
+//         break;
+//     case 'friday':
+//         console.log('Record videos')
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('Enjoy the weekend!')
+//         break;
+// }
+
+// if (day === 'monday') {
+//     console.log('Plan course structure');
+//     console.log('Go to coding meeting');
+// } else if (day === 'tuesday') {
+//     console.log("prepare theory videos");
+// } else if (day === 'wednesday' || day === 'thursday') {
+//     console.log('Write code examples');
+// } else if (day === 'friday') {
+//     console.log('Record videos');
+// } else if (day === 'saturday' || day === 'sunday') {
+//     console.log('Enjoy the weekend!')
+// } else {
+//     'Not a valid day'
+// }
+
+
+// // Conditional Operator
+// const age = 23;
+// // age >= 18 ? console.log('I like to drink wine!') : console.log('I like to drink water!')
+
+// const drink = age >= 18 ? 'wine' : 'water';
+// console.log(drink);
+
+// let drink2;
+// if (age >= 18) {
+//     drink2 = 'wine';
+// } else {
+//     drink2 = 'water';
+// }
+
+// console.log(drink2)
+
+const tip = .15;
+const tip1 = .20;
+const bill = 430;
+
+const tipAmount = bill > 50 && bill < 300 ? `The bill was ${bill}, the tip was ${bill * tip}, and the total value ${bill + (bill * tip)}` : `The bill was ${bill}, the tip was ${bill * tip1}, and the total value ${bill + (bill * tip1)}`;
+console.log(tipAmount);
