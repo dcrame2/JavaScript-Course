@@ -9,7 +9,7 @@ if (hasDriversLicense) console.log("I can drive!");*/
 // const interface = 'Audio';
 // const private = 534;
 
-
+/*
 function logger() {
     console.log("my name is jonas");
 }
@@ -31,6 +31,51 @@ console.log(appleJuice);
 
 const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
+*/
+
+
+//Function declaration
+/*
+function calcaAge1(birthYear) {
+    const age = 2021 - birthYear;
+    return age;
+}
+
+const age1 = calcaAge1(1996);
+console.log(age1);
+*/
+
+
+//function expression
+/*
+const calcAge2 = function (birthYear) {
+    const age = 2021 - birthYear;
+    return age;
+}
+
+const age2 = calcAge2(1996);
+console.log(age2);
+*/
+
+
+//Arrow function 
+/*
+const calcAge3 = birthYear => 2037 - birthYear;
+const age3 = calcAge3(1996);
+console.log(age3);
+
+const yearUntiltRetirement = (birthYear, firstName) => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    return `${firstName} retires in ${retirement} years`;
+}
+
+console.log(yearUntiltRetirement(1991, "Dylan"));
+/*
+
+
+
+
 
 
 
