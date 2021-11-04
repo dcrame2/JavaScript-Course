@@ -126,7 +126,7 @@ console.log(yearUntiltRetirement(1917, 'Mike'));
 //Coding Challenge #3
 
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+//const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
 
 //Test 1
@@ -134,6 +134,7 @@ const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 // const avgKoalas = calcAverage(65, 54, 49);
 
 // Test 2 
+/*
 const scoreDolphins = calcAverage(85, 54, 41);
 const scoreKoalas = calcAverage(23, 34, 27);
 
@@ -151,4 +152,44 @@ function checkWinner(avgDolphins, avgKoalas) {
 
 const winner = checkWinner(scoreDolphins, scoreKoalas);
 console.log(winner);
+*/
 
+
+// Data Structures: ARRAYS
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+//other way to write Arrays but above is better
+const years1 = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+//.length
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+//mutate
+friends[2] = 'Jay';
+console.log(friends);
+
+
+const jonas = ['Jonas', 'Schmed', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+console.log(jonas.length);
+
+// Exercise
+const calcAge = function (birthYear) {
+    const age = 2037 - birthYear;
+    return age;
+}
+
+const years = [1990, 1967, 2002, 2010, 2018];
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [age1, age2, age3];
+console.log(ages);
