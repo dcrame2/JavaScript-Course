@@ -156,7 +156,7 @@ console.log(winner);
 
 
 // Data Structures: ARRAYS
-
+/*
 const friends = ['Michael', 'Steven', 'Peter'];
 console.log(friends);
 
@@ -193,3 +193,94 @@ console.log(age1, age2, age3);
 
 const ages = [age1, age2, age3];
 console.log(ages);
+*/
+
+
+// ARRAY OPERATORS: METHODS
+/*
+const friends = ['Michael', 'Steven', 'Peter'];
+
+
+// Add elements
+const newLength = friends.push('Jay');
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+// Remove elements
+friends.pop();
+const popped = friends.pop(); //Last
+console.log(popped);
+console.log(friends);
+
+friends.shift(); //First
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+
+console.log(friends.includes('Steven'));
+*/
+
+
+//Coding Challenge #2
+/*
+function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        return bill * .15;
+    } else {
+        return bill * .20;
+    }
+
+}
+
+const bills = [125, 555, 44];
+console.log(bills);
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(tips);
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+console.log(total);
+*/
+
+
+
+
+
+
+
+// Objects
+const dylan = {
+    firstName: 'Dylan',
+    lastName: 'Cramer',
+    age: 2021 - 1996,
+    job: 'Web Developer',
+    friends: ['Michael', 'Dustin', 'Colton']
+}
+
+// Dot notation
+console.log(dylan.lastName);
+//bracket notation 
+console.log(dylan['lastName']);
+
+const nameKey = 'Name';
+console.log(dylan['first' + nameKey]);
+console.log(dylan['last' + nameKey]);
+
+// const interestedIn = prompt("What do you want to know about Dylan? Choose between firstName, lastName, age, job, and friends");
+
+// if (dylan[interestedIn]) {
+//     console.log(dylan[interestedIn]);
+// } else {
+//     console.log('Wrong Request!');
+// }
+
+
+dylan.location = 'Chicago';
+dylan['twitter'] = '@itsyoungdyl';
+console.log(dylan);
+
+//challenge
+console.log(`${dylan.firstName} has ${dylan.friends.length} friends, and his best friend is called ${dylan.friends[0]}`);
