@@ -289,7 +289,7 @@ console.log(`${dylan.firstName} has ${dylan.friends.length} friends, and his bes
 
 
 
-const dylan = {
+/*const dylan = {
     firstName: 'Dylan',
     lastName: 'Cramer',
     birthYear: 1996,
@@ -297,7 +297,7 @@ const dylan = {
     friends: ['Michael', 'Dustin', 'Colton'],
     hasDriversLicense: true,
 
-    // When writing functions inside of an object you need to write it as a function expression. 
+    // When writing functions inside of an object you need to write it as a function expression.
     // calcAge: function (birthYear) {
     //     return 2021 - birthYear;
     // }
@@ -324,13 +324,55 @@ const dylan = {
 };
 
 
-console.log(dylan.getSummary());
 
+console.log(dylan.getSummary());
+*/
 // console.log(dylan.age);
 // console.log(dylan.age);
 // console.log(dylan.age);
 
 // Challenge
 // 'Dylan is a 25-year old Web Developer, and he has a driver's license"
+
+
+
+// Coding Challenge #3
+
+
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+
+
+function winner() {
+    if (mark.calcBMI() > john.calcBMI()) {
+        return `${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s BMI (${john.BMI})'`;
+    } else if (mark.calcBMI() < john.calcBMI()) {
+        return `${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s BMI (${mark.BMI})'`;
+    }
+}
+
+mark.calcBMI();
+john.calcBMI();
+console.log(mark.BMI, john.BMI);
+console.log(winner());
 
 
