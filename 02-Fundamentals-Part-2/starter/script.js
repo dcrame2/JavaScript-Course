@@ -252,7 +252,7 @@ console.log(total);
 
 
 // Objects
-const dylan = {
+/*const dylan = {
     firstName: 'Dylan',
     lastName: 'Cramer',
     age: 2021 - 1996,
@@ -262,7 +262,7 @@ const dylan = {
 
 // Dot notation
 console.log(dylan.lastName);
-//bracket notation 
+//bracket notation
 console.log(dylan['lastName']);
 
 const nameKey = 'Name';
@@ -284,3 +284,53 @@ console.log(dylan);
 
 //challenge
 console.log(`${dylan.firstName} has ${dylan.friends.length} friends, and his best friend is called ${dylan.friends[0]}`);
+*/
+
+
+
+
+const dylan = {
+    firstName: 'Dylan',
+    lastName: 'Cramer',
+    birthYear: 1996,
+    job: 'Web Developer',
+    friends: ['Michael', 'Dustin', 'Colton'],
+    hasDriversLicense: true,
+
+    // When writing functions inside of an object you need to write it as a function expression. 
+    // calcAge: function (birthYear) {
+    //     return 2021 - birthYear;
+    // }
+
+
+    // Using the 'this' keyword
+    // calcAge: function () {
+    //     // console.log(this);
+    //     return 2021 - this.birthYear;
+    // }
+
+
+    calcAge: function () {
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    },
+
+
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's lincense`;
+
+    }
+};
+
+
+console.log(dylan.getSummary());
+
+// console.log(dylan.age);
+// console.log(dylan.age);
+// console.log(dylan.age);
+
+// Challenge
+// 'Dylan is a 25-year old Web Developer, and he has a driver's license"
+
+
