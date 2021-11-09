@@ -339,7 +339,7 @@ console.log(dylan.getSummary());
 // Coding Challenge #3
 
 
-const mark = {
+/*const mark = {
     fullName: 'Mark Miller',
     mass: 78,
     height: 1.69,
@@ -374,5 +374,12 @@ mark.calcBMI();
 john.calcBMI();
 console.log(mark.BMI, john.BMI);
 console.log(winner());
+*/
 
+
+
+// Loops: for()
+for (let rep = 1; rep <= 10; rep++) { // for loop keeps running while condition is TRUE
+    console.log(`Lifting weights repetition ${rep}`);
+}
 
