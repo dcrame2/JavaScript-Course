@@ -379,7 +379,36 @@ console.log(winner());
 
 
 // Loops: for()
+/*
 for (let rep = 1; rep <= 10; rep++) { // for loop keeps running while condition is TRUE
     console.log(`Lifting weights repetition ${rep}`);
 }
+*/
 
+
+
+
+// Looping through Arrays
+
+const jonas = [
+    'Jonas',
+    'Schmed',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Steven', 'Peter']
+];
+
+const types = [];
+
+// logging all items to the console
+for (let i = 0; i < jonas.length; i++) {
+    // reading from jonas array
+    console.log(jonas[i], typeof jonas[i]);
+
+    // filling types array
+    // types[i] = typeof jonas[i];
+    // other way to do the above but cleaner
+    types.push(typeof jonas[i]);
+}
+
+console.log(types);
