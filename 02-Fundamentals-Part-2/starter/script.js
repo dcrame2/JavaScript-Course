@@ -390,7 +390,7 @@ for (let rep = 1; rep <= 10; rep++) { // for loop keeps running while condition 
 
 // Looping through Arrays
 
-const jonas = [
+/*const jonas = [
     'Jonas',
     'Schmed',
     2037 - 1991,
@@ -410,5 +410,158 @@ for (let i = 0; i < jonas.length; i++) {
     // other way to do the above but cleaner
     types.push(typeof jonas[i]);
 }
-
 console.log(types);
+*/
+
+
+// Lopping through all items to calculate the ages and then pushing the array items to a new array called ages 
+/*const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+*/
+
+
+// countinue and break
+/*
+console.log("---ONLY STRINGS---");
+for (let i = 0; i < jonas.length; i++) {
+
+    if (typeof jonas[i] !== 'string') continue; // using continue
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+
+console.log("---BREAK WITH NUMBER---");
+for (let i = 0; i < jonas.length; i++) {
+
+    if (typeof jonas[i] === 'number') break; // using break
+    console.log(jonas[i], typeof jonas[i]);
+}
+*/
+
+
+
+
+
+// LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+
+/*const jonas = [
+    'Jonas',
+    'Schmed',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Steven', 'Peter']
+];
+
+
+
+// Looping backwards
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(jonas[i]);
+}
+
+
+// Loop inside a loop
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`-----Starting exercise ${exercise}`);
+    for (let rep = 1; rep <= 5; rep++) {
+        console.log(`Exercise ${exercise}: Liftin Weights repetition ${rep}`);
+    }
+} */
+
+
+
+// WHILE LOOP
+
+
+
+/*let rep = 1;
+while (rep <= 10) {
+
+    console.log(`Liftin Weights repetition ${rep}`);
+    rep++
+}
+
+// While Loop that does not need a counter
+let dice = Math.floor(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.floor(Math.random() * 6) + 1;
+
+    if (dice === 6) {
+        console.log('Loop is about to end... you rolled a 6');
+    }
+} */
+
+
+// CODING CHALLENGE #4
+
+
+/*function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        return bill * .15;
+    } else {
+        return bill * .20;
+    }
+
+}
+
+const bills = [125, 555, 44];
+console.log(bills);
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(tips);
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+console.log(total); */
+
+
+
+
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+const totals = [];
+
+
+function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        return bill * .15;
+    } else {
+        return bill * .20;
+    }
+}
+
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(calcTip(bills[i]) + bills[i]);
+}
+
+console.log(tips);
+console.log(totals);
+
+
+
+function calcAverage(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+
+
+
+
