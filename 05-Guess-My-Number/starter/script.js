@@ -36,8 +36,21 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highscore;
     }
 
-    // win guess is too high
-  } else if (guess > number) {
+    // When guess is wrong
+  } else if (guess !== number) {
+    if (score > 1) {
+      document.querySelector('.message').textContent =
+        guess > number ? 'Too high!' : 'Too low!';
+      score--; //score = score - 1;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'You lost the game!';
+      document.querySelector('.score').textContent = 0;
+    }
+  }
+
+  // win guess is too high
+  /*else if (guess > number) {
     if (score > 1) {
       document.querySelector('.message').textContent = 'Too high!';
       score--; //score = score - 1;
@@ -46,6 +59,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lost the game!';
       document.querySelector('.score').textContent = 0;
     }
+
     // When guess is too low
   } else if (guess < number) {
     if (score > 1) {
@@ -56,7 +70,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lost the game!';
       document.querySelector('.score').textContent = 0;
     }
-  }
+  }*/
 });
 
 document.querySelector('.again').addEventListener('click', function () {
