@@ -13,7 +13,7 @@ console.log(document.querySelector('.guess').value);
 
 //secret number needs to be outside the listener
 let number = Math.floor(Math.random() * 20) + 1;
-
+let highscore = 0;
 let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -30,6 +30,12 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = number;
 
     document.querySelector('.number').style.width = '30rem';
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
+
     // win guess is too high
   } else if (guess > number) {
     if (score > 1) {
