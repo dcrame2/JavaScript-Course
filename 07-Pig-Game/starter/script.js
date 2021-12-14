@@ -90,5 +90,5 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
-
+// New game
 btnNew.addEventListener('click', init);
