@@ -80,7 +80,7 @@ console.log(z === window.z);
 // this keyword
 
 // console.log(this);
-
+/*
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
   //   console.log(this);
@@ -110,3 +110,54 @@ matilda.calcAge();
 
 const f = jonas.calcAge;
 f();
+*/
+
+// Not a code block. Its a literal variable.
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year);
+
+    // SOLUTION 1
+    //     const self = this;
+    //     const isMillenial = function () {
+    //       console.log(self);
+    //       //   console.log(this.year >= 1981 && this.year <= 1996);
+    //       console.log(self.year >= 1981 && self.year <= 1996);
+    //     };
+    //     isMillenial();
+    //   },
+
+    // SOLUTION 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  // Does not get its own this key word. It will get the global this.
+  greet: function () {
+    console.log(`Hey ${this.firstName}`), console.log(this);
+  },
+};
+
+jonas.greet();
+jonas.calcAge();
+
+//arguments keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5, 8);
