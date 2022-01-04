@@ -54,6 +54,48 @@ const restaurant = {
   },
 };
 
+// Logical Assignment Operator
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'CLa Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// rest1.numGuests = rest1.numGuests || 10; //if rest1.numGuests is true it will not evaluate 10
+// rest2.numGuests = rest2.numGuests || 10;
+
+// OR assignment operator
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// Nullish assigment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assignment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>'; //works because of short circuiting
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1, rest2);
+
+/*
+// Nullish Coalescing Operator (??)
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+*/
+/*
 // && and ||
 
 console.log('--- OR ---');
@@ -85,6 +127,7 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.order('mushrooms', 'spinach');
+*/
 
 /*
 // 1) Deconstructoring
