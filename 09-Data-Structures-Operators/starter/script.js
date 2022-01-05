@@ -53,6 +53,17 @@ const restaurant = {
     },
   },
 };
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log(...menu.entries());
+
 /*
 // Logical Assignment Operator
 const rest1 = {
@@ -300,8 +311,9 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
 
-/////////////////////////////Coding Challenge #1
 /*
+/////////////////////////////Coding Challenge #1
+
 We're building a football betting app (soccer for my American friends 😅)!
 Suppose we get data from a web service about a certain game ('game' variable on
 next page). In this challenge we're gonna work with that data.
@@ -328,7 +340,7 @@ operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored
 GOOD LUCK 😀
-*/
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -407,3 +419,4 @@ printGoals(...game.scored);
 //7.
 team1 < team2 && console.log('Team 1 is more likely to win!');
 team1 > team2 && console.log('Team 2 is more likely to win!');
+*/
