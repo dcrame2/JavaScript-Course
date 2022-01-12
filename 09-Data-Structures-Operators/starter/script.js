@@ -58,6 +58,35 @@ const restaurant = {
   },
 };
 
+// SETS
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]); //need to pass in an intirable (most common is an array)
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+// there is no way to get data out of a set
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+// We want to know which roles we have at the resturant
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)]; //spread operator works the same as an array as a set
+console.log(staffUnique);
+console.log(new Set(staff).size);
 /*
 // Property NAMES
 const prop = Object.keys(openingHours);
