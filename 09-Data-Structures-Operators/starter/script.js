@@ -87,8 +87,9 @@ const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
 const staffUnique = [...new Set(staff)]; //spread operator works the same as an array as a set
 console.log(staffUnique);
 console.log(new Set(staff).size);
+
 /*
-// Property NAMES
+// Property NAMES - 
 const prop = Object.keys(openingHours);
 console.log(prop);
 
