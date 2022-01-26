@@ -58,6 +58,44 @@ const restaurant = {
   },
 };
 
+const airline = 'TAP Air Portugal';
+const place = 'A320';
+
+console.log(place[0]);
+
+console.log(airline.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' '))); // grabbing the first part of the string
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //grabbing the last part of the string
+
+console.log(airline.slice(-2)); // negative # will start grabing from the end
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat!');
+  } else {
+    console.log('You got lucky!');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('jonas'));
+
+/*
+// MAP IN PRACTICE
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -89,7 +127,7 @@ console.log(question.get(question.get('correct') === answer));
 
 // Convert Map to array
 console.log(...question);
-
+*/
 /*
 //////////////////////////////
 //MAPS: Fundamentals
@@ -617,6 +655,7 @@ for (const [team, odd] of Object.entries(game.odds)) {
 }
 */
 
+/*
 //////////////////////////////////////
 // Coding Challenge #3
 // Let's continue with our football betting app! This time, we have a map called
@@ -673,3 +712,4 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
 }
+*/
