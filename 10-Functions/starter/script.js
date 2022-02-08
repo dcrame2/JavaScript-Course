@@ -55,6 +55,7 @@ newPassport(jonas);
 checkIn(flight, jonas);
 */
 
+/*
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -82,3 +83,59 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
+*/
+
+/*
+// Functions inside of functions (this is good for functional programming)
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+
+greet('Hello')('Jonas'); //same way as above
+
+//using the above but in arrow function
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('Hi')('Jonas');
+*/
+
+// The call and apply methods
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book: function (flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Dylan Cramer');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+// Call method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Cramer Dylan');
+console.log(lufthansa);
+
+// Apply method (not really used in modern JavaScript)
+const flightData = [583, 'George Cooper'];
+book.apply(eurowings, flightData);
+console.log(eurowings);
