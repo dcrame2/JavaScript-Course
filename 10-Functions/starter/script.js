@@ -139,3 +139,45 @@ console.log(lufthansa);
 const flightData = [583, 'George Cooper'];
 book.apply(eurowings, flightData);
 console.log(eurowings);
+
+// Bing Method
+// Allows us to change the this keyword. This creates a new function
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+bookEW(23, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Dylan Cramer');
+bookEW23('Devon Cramer');
+
+// Using bind with Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial Application
+const addTax = (rate, value) => value + value * rate;
+
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+
+// Rewriting the function using the same thing
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(1000));
