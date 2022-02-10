@@ -223,7 +223,7 @@ console.log(addVAT2(1000));
 // Data 2: [1, 5, 3, 9, 6, 1]
 
 // Hints: Use many of the tools you learned about in this and the last section
-
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -261,3 +261,37 @@ document
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 
 // poll.registerNewAnswer();
+*/
+
+/*
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// Immediately Invoked Function Expression
+(function () {
+  console.log('This will never run again');
+})();
+
+// Arrow functions example of IIFE
+(() => console.log('This will ALSO never run again'))();
+*/
+
+// Closures
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker);
