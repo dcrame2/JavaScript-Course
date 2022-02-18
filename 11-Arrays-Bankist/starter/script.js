@@ -91,7 +91,7 @@ displayMovements(account1.movements);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -187,6 +187,7 @@ currenciesUnique.forEach(function (value, _, map) {
 // Sets dont have keys - it makes no sense to have it for sets.
 */
 
+/*
 //////////////////////////////////////////////////////
 // Coding Challenge #1
 
@@ -219,3 +220,22 @@ const checkDogs = function (dogsJulia, dogsKate) {
 };
 
 checkDogs(dogsJulia, dogsKate);
+*/
+
+// MAP Method
+
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(function (mov, i) {
+  return mov * eurToUsd;
+});
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(mov * eurToUsd);
+}
+console.log(movementsUSDfor);
+
+const movementsUSD1 = movements.map(mov => mov * eurToUsd);
+console.log(movementsUSD1);
