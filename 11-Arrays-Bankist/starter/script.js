@@ -225,17 +225,30 @@ checkDogs(dogsJulia, dogsKate);
 // MAP Method
 
 const eurToUsd = 1.1;
-const movementsUSD = movements.map(function (mov, i) {
+
+//MAP Method returns a new array and that is why we  put it into a variable
+const movementsUSD = movements.map(function (mov) {
   return mov * eurToUsd;
 });
 console.log(movements);
 console.log(movementsUSD);
 
+const movementsUSD1 = movements.map(mov => mov * eurToUsd);
+console.log(movementsUSD1);
+
+// writing the same function with forOf
 const movementsUSDfor = [];
 for (const mov of movements) {
   movementsUSDfor.push(mov * eurToUsd);
 }
 console.log(movementsUSDfor);
 
-const movementsUSD1 = movements.map(mov => mov * eurToUsd);
-console.log(movementsUSD1);
+const movementsDescriptions = movements.map((mov, i, array) => {
+  if (mov > 0) {
+    return `Movement ${i + 1}: You deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+  }
+});
+
+console.log(movementsDescriptions);
