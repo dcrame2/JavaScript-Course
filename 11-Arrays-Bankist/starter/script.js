@@ -81,6 +81,21 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(function (name) {
+        return name[0];
+      })
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -223,7 +238,7 @@ checkDogs(dogsJulia, dogsKate);
 */
 
 // MAP Method
-
+/*
 const eurToUsd = 1.1;
 
 //MAP Method returns a new array and that is why we  put it into a variable
@@ -244,7 +259,7 @@ for (const mov of movements) {
 console.log(movementsUSDfor);
 
 const movementsDescriptions = movements.map(
-  (mov, i, array) =>
+  (mov, i) =>
     `Movement ${i + 1}: You  ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
       mov
     )}`
@@ -257,4 +272,4 @@ const movementsDescriptions = movements.map(
   // }
 );
 
-console.log(movementsDescriptions);
+console.log(movementsDescriptions);*/
