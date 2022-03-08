@@ -81,6 +81,14 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce(function (acc, mov) {
+    return acc + mov;
+  }, 0);
+  labelBalance.innerText = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -94,7 +102,6 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts);
-console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -273,3 +280,42 @@ const movementsDescriptions = movements.map(
 );
 
 console.log(movementsDescriptions);*/
+
+/*
+// FILTER METHOD
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+// Example using a for of on the same example above for filter method
+const depositsFor = [];
+for (const mov of movements) {
+  if (mov > 0) {
+    depositsFor.push(mov);
+  }
+}
+console.log(depositsFor);
+
+// Pulling the withdrawals from the movements array only
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+console.log(withdrawals);
+*/
+
+// REDUCE METHOD
+console.log(movements);
+
+// accumalator is like a snowball where it keeps growing
+const balance = movements.reduce(function (accumalator, cur, i, arr) {
+  console.log(`Iteration ${i}: ${accumalator}`);
+  return accumalator + cur;
+}, 0);
+console.log(balance);
+
+// Example using a for of on the same example above for reduce method
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
