@@ -432,3 +432,31 @@ const totalDepositsInUSD = movements
 
 console.log(totalDepositsInUSD);
 */
+
+///////////////////////////////////
+// Coding Challenege #3
+
+/*
+Rewire the 'calcAverageHumanAge' function from the previous chellenege, but this time as an arrow function, and using chaining
+
+Test data:
+  Data 1: [5, 2, 4, 1, 15, 8, 3]
+  Data 2: [16, 6, 10, 5, 6, 1, 4]
+*/
+
+const data1 = [5, 2, 4, 1, 15, 8, 3];
+const data2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcAverageHumanAge = function (arr) {
+  const humanAge =
+    arr
+      .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
+      .filter(dogAge => dogAge > 18)
+      .reduce(function (acc, dogAge, i, arr) {
+        return acc + dogAge;
+      }, 0) / arr.length;
+
+  return humanAge;
+};
+
+console.log(calcAverageHumanAge(data1));
