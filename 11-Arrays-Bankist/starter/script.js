@@ -142,6 +142,13 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 
+// Event Handler
+btnLogin.addEventListener('click', function (e) {
+  // Prevent form from submitting
+  e.preventDefault();
+  console.log('LOGIN');
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -444,19 +451,45 @@ Test data:
   Data 2: [16, 6, 10, 5, 6, 1, 4]
 */
 
+/*
 const data1 = [5, 2, 4, 1, 15, 8, 3];
 const data2 = [16, 6, 10, 5, 6, 1, 4];
 
 const calcAverageHumanAge = function (arr) {
-  const humanAge =
-    arr
-      .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
-      .filter(dogAge => dogAge > 18)
-      .reduce(function (acc, dogAge, i, arr) {
-        return acc + dogAge;
-      }, 0) / arr.length;
+  const humanAge = arr
+    .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
+    .filter(dogAge => dogAge > 18)
+    .reduce(function (acc, dogAge, i, arr) {
+      return acc + dogAge / arr.length;
+    }, 0);
 
   return humanAge;
 };
 
 console.log(calcAverageHumanAge(data1));
+console.log(calcAverageHumanAge(data2));
+*/
+
+/*
+
+//FIND Method
+// Will find the first element in the array
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+
+// Find method but FOR Of
+const accountFor = function () {
+  // const newArray = [];
+  for (const acc of accounts) {
+    if (acc.owner === 'Jessica Davis') {
+      console.log(acc);
+    }
+  }
+};
+accountFor();
+*/
