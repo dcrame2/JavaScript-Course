@@ -79,8 +79,8 @@ const displayMovements = function (movements) {
   });
 };
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce(function (acc, mov) {
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce(function (acc, mov) {
     return acc + mov;
   }, 0);
   labelBalance.innerText = `${balance}€`;
@@ -138,7 +138,6 @@ const createUsernames = function (accs) {
 createUsernames(accounts);
 
 // Event Handler
-
 let currentAccount;
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -163,11 +162,23 @@ btnLogin.addEventListener('click', function (e) {
     // Display movement
     displayMovements(currentAccount.movements);
     // Display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
     // Display summary
     calcDisplaySummary(currentAccount);
     console.log('login');
   }
+});
+
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputTransferAmount.value);
+  const recieverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  console.log(amount, recieverAcc);
+
+  // if(amount > 0 && )
 });
 
 /////////////////////////////////////////////////
