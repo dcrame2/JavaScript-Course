@@ -61,10 +61,12 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
@@ -229,6 +231,13 @@ btnClose.addEventListener('click', function (e) {
     // Hide UI
     containerApp.style.opacity = 0;
   }
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
@@ -597,3 +606,81 @@ console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
 */
+
+/*
+// FLAT
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2));
+
+// Using Flat in practice
+const accountMovements = accounts.map(acc => acc.movements);
+console.log(accountMovements);
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+
+const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+// Same as above but more clean
+const overallBalanceClean = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalanceClean);
+
+//  FLAT MAP
+const overallBalanceClean1 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalanceClean1);
+*/
+
+// SORT METHOD with Strings
+// sort method converts everything into strings
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+console.log(owners);
+
+// NUMBERS
+console.log(movements);
+// console.log(movements.sort()); does not work
+
+// Reutrn < 0, a before b (keep order)
+// return > 0 b before a (switch order)
+
+// Ascending
+movements.sort((a, b) => {
+  if (a > b) {
+    return 1;
+  }
+  if (b > a) {
+    return -1;
+  }
+});
+console.log(movements);
+
+// Same as above but more clean
+movements.sort((a, b) => a - b);
+
+console.log(movements);
+
+// Descending
+movements.sort((a, b) => {
+  if (a > b) {
+    return -1;
+  }
+  if (b > a) {
+    return 1;
+  }
+});
+
+console.log(movements);
+
+// Same as above but more clean
+movements.sort((a, b) => b - a);
+console.log(movements);
+
+// A and B are two consective #s in the array
