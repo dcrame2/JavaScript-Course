@@ -749,3 +749,19 @@ const numDeposits1000 = accounts
   .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
 
 console.log(numDeposits1000);
+
+//3. Create a new object using reduce()
+// Sum of depostis and withdrawals
+
+const sum = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+
+console.log(sum);
