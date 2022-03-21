@@ -758,10 +758,32 @@ const sum = accounts
   .reduce(
     (sums, cur) => {
       cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
-
       return sums;
     },
     { deposits: 0, withdrawals: 0 }
   );
 
 console.log(sum);
+
+// 4.
+// Converting any string to capitilize for every first word
+// this is a nice title -> This Is a Nice Title
+
+const convertTitleCase = function (title) {
+  const capitilize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exception = ['a', 'an', 'the', 'but', 'and', 'or', 'on', 'in', 'with'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word =>
+      exception.includes(word) ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(' ');
+
+  return titleCase;
+};
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));
