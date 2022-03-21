@@ -638,6 +638,7 @@ const overallBalanceClean1 = accounts
 console.log(overallBalanceClean1);
 */
 
+/*
 // SORT METHOD with Strings
 // sort method converts everything into strings
 const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
@@ -684,3 +685,67 @@ movements.sort((a, b) => b - a);
 console.log(movements);
 
 // A and B are two consective #s in the array
+*/
+
+/*
+// Creating and filling Arrays
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+// Emplty arrays + fill method
+const x = new Array(7);
+console.log(x);
+// console.log(x.map(() => 5)); //does not work
+
+x.fill(1);
+x.fill(1, 3, 5);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+// From method: Array.from()
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+const diceRolls = Array.from({ length: 100 }, (cur, i) =>
+  Math.floor(Math.random() * 6 + 1)
+);
+console.log(diceRolls);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value')
+  ).map(el => Number(el.textContent.replace('€', '')));
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')].map(
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI2);
+});
+*/
+
+//////////////////////////
+// Array Methods Practice
+
+// 1.
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(bankDepositSum);
+
+// 2. Deposits in bank with atleast 1000
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(mov => mov >= 1000).length;
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+
+console.log(numDeposits1000);
