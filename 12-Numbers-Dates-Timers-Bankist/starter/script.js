@@ -251,3 +251,5 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+// Numbers are always located as decimals
+console.log(23 === 23.0);
