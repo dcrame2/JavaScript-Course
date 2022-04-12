@@ -252,6 +252,7 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 // Numbers are always located as decimals
+/*
 console.log(23 === 23.0);
 
 console.log(Number('23'));
@@ -264,3 +265,13 @@ console.log(Number.parseInt('e23', 10));
 console.log(Number.parseInt('2.5rem'));
 console.log(Number.parseFloat('   2.5rem    '));
 // console.log(parseFloat('   2.5rem    '));
+
+labelBalance.addEventListener('click', getHigh);
+
+function getHigh() {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+}
+*/
