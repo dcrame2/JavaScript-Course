@@ -155,6 +155,23 @@ const updateUI = function (acc) {
 // Event handlers
 let currentAccount;
 
+// FAKE ALWAYS LOGGED IN
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100;
+
+// Formatting the date below Current Balance
+const now = new Date();
+console.log(now);
+const day = `${now.getDate()}`.padStart(2, 0);
+const month = `${now.getMonth() + 1}`.padStart(2, 0);
+const year = now.getFullYear();
+const hours = now.getHours();
+const min = now.getMinutes();
+labelDate.innerText = `${month}/${day}/${year}, ${hours}:${min}`;
+
+//day/month/year
+
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
@@ -291,19 +308,49 @@ function getHigh() {
 // console.log(Number('230_000')); // this will not work dont use underscores in numbers unless its two a new varaible.
 
 //BIGGEST NUMBER IN JAVASCRIPT: useful to know for databases IDs or APIs
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(2 ** 53 + 5);
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(2 ** 53 + 5);
 
-//BIG INT actually made this possible
-console.log(29825892423412374816457864574365n);
-console.log(BigInt(2982589244574365));
+// //BIG INT actually made this possible
+// console.log(29825892423412374816457864574365n);
+// console.log(BigInt(2982589244574365));
 
-//Operations
-console.log(10000n + 10000n);
+// //Operations
+// console.log(10000n + 10000n);
 
-const huge = 1298417249081279128742;
-const num = 23;
-console.log(huge * num);
+// const huge = 1298417249081279128742;
+// const num = 23;
+// console.log(huge * num);
 
-console.log(20n === 20);
+// console.log(20n === 20);
+
+// // Deivisions
+// console.log(10n / 3n);
+// console.log(10 / 3);
+
+//DATEs & TIMES
+
+// Create a date
+// const now = new Date();
+// console.log(now);
+
+// console.log(new Date(account1.movementsDates[0]));
+
+// // Working with dates
+// const future = new Date(2037, 10, 19, 15, 23);
+// console.log(future);
+// console.log(future.getFullYear());
+// console.log(future.getMonth());
+// console.log(future.getDate());
+// console.log(future.getDay());
+// console.log(future.getHours());
+// console.log(future.getMinutes());
+
+// console.log(future.toISOString());
+// console.log(future.getTime());
+
+// console.log(Date.now());
+
+// future.setFullYear(2040);
+// console.log(future);
